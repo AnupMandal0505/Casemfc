@@ -1,0 +1,382 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --default-font: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Montserrat", sans-serif;
+  --nav-font: "Poppins", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--nav-font);
+  color: #32353A;
+}
+
+p{
+  font-family: var(--default-font);
+  color: #212529;
+}
+.header {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+
+}
+
+
+.header .back-video {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .header .back-video {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .header .back-video {
+    width: auto;
+    height: 100%;
+  }
+}
+
+.header .navbar-brand{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* .navbar-nav .nav-link {
+    color: #ffffff; 
+    position: relative; 
+    text-decoration: none;
+    padding-bottom: 5px; 
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px; 
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff; 
+    transition: width 0.4s ease, opacity 0.4s ease; 
+    opacity: 0;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%; 
+    opacity: 1; 
+} */
+
+.navbar-nav .nav-link {
+    font-weight: bold;
+    font-size: 1rem;
+  color: #ffffff; /* Initial link color */
+  position: relative; /* Required for the shadow effect */
+  text-decoration: none; /* Remove the default underline */
+  transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+  padding: 5px 10px; /* Add some padding for a better visual effect */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffcc00; /* Change the text color on hover */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Add a slight background color */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Add a shadow effect */
+  border-radius: 5px; /* Optional: round the corners */
+}
+
+
+.wrapper {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wrapper h1{
+    color: #131d33;
+}
+.wrapper .parent {
+  width: 80%;
+  /* margin: 20px; */
+  height: 480px;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  color: #ffffff;
+  padding-top: 55px;
+  box-shadow: 10px 7px 20px rgb(66, 65, 63);
+
+}
+
+.wrapper .parent h5{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.wrapper .parent p{
+    color: rgb(255, 255, 255);
+}
+.wrapper .child {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  transition: all 1.1s;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.wrapper .bg-one {
+  background-image: url(https://img.freepik.com/premium-photo/civil-engineer-images_1012565-5747.jpg);
+}
+
+.wrapper .parent:hover .child {
+  transform: scale(1.2);
+}
+
+
+
+
+
+.statistics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stat-item {
+    text-align: center;
+    margin: 20px;
+    flex: 1 1 200px;
+}
+
+.stat-item img {
+    max-width: 100px;
+    margin-bottom: 15px;
+}
+
+.stat-item h2 {
+    font-size: 2em;
+    margin: 0;
+    color: #000;
+}
+
+.stat-item p {
+    font-size: 1em;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .statistics {
+        flex-direction: column;
+    }
+
+    .stat-item {
+        margin: 10px 0;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .stat-item h2 {
+        font-size: 1.8em;
+    }
+
+    .stat-item p {
+        font-size: 0.9em;
+    }
+}
+
+
+
+footer{
+    background-color: #131d33;
+  
+  }
+  .footer-first{
+    padding: 15px;
+    color: #FFFFFF1A;
+    border: 1px solid #FFFFFF1A;
+  }
+  
+  .footer-first h4{
+    color:#0074D9;
+  }
+  
+  .footer-first li{
+    list-style-type: circle;
+    color: white;
+  }
+  
+  .footer-middle {
+    border-left: 1px solid #FFFFFF1A;
+    border-right: 1px solid #FFFFFF1A;
+    color: white;
+  }
+  
+  .footer-middle h3{
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .footer-bottom{
+    border-top: 1px solid #FFFFFF1A;
+    color: white;
+  }
+  .footer-bottom a{
+    text-decoration: none;
+    color:#0074D9;
+  }
+  
+  
+/* .heros {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: #fff;
+} */
+
+/* .content {
+    max-width: 40%;
+} */
+
+/* h1 {
+    font-size: 3em;
+    font-weight: 300;
+    line-height: 1.2;
+} */
+
+p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+.get-started-btn {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* .image-section {
+    position: relative;
+    max-width: 50%;
+}
+
+.image-section img {
+    width: 100%;
+    border-radius: 5px;
+} */
+/* 
+.exercise-details {
+    position: absolute;
+    top: 20%;
+    right: -20%;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.exercise-details .price {
+    font-size: 2em;
+    font-weight: bold;
+} */
+/* 
+.taxes-btn, .gains-btn {
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: none;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.ipo-indicator {
+    position: absolute;
+    bottom: 5%;
+    right: -20%;
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+} */
+
+.home-demo .card {
+    /* color: #FFF; */
+    text-align: center;
+    padding: 15px;
+    margin: 5px;
+    font-style: italic;
+    font-weight: 300;
+}
+
+
+.company-trust {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    margin-top: 50px;
+}
+
+.company-trust .logos img {
+    margin: 0 10px;
+    max-height: 30px;
+}
+
+
+
+
+
+
+
+
+/* styles.css */
+.scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #dc3545; /* Bootstrap Danger color */
+  color: white;
+  border-radius: 50%;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s, visibility 0.4s;
+}
+
+.scroll-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-top:hover {
+  background-color: #c82333; /* Darker shade of Bootstrap Danger */
+}

@@ -1,0 +1,120 @@
+
+:root {
+    --default-font: "Open Sans",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --heading-font: "Montserrat",  sans-serif;
+    --nav-font: "Poppins",  sans-serif;
+  }
+  
+  
+  :root { 
+    --background-color: #ffffff; 
+    --default-color: #212529;
+    --heading-color: #32353a;
+    --accent-color: #e84545; 
+    --surface-color: #ffffff; 
+    --contrast-color: #ffffff; 
+  }
+  
+  :root {
+    --nav-color: #3a3939;  
+    --nav-hover-color: #e84545; 
+    --nav-mobile-background-color: #ffffff; 
+    --nav-dropdown-background-color: #ffffff; 
+    --nav-dropdown-color: #3a3939; 
+    --nav-dropdown-hover-color: #e84545; 
+  }
+  
+  
+  .light-background {
+    --background-color: #f9f9f9;
+    --surface-color: #ffffff;
+  }
+  
+  .dark-background {
+    --background-color: #060606;
+    --default-color: #ffffff;
+    --heading-color: #ffffff;
+    --surface-color: #252525;
+    --contrast-color: #ffffff;
+  }
+  
+  /* Smooth scroll */
+  :root {
+    scroll-behavior: smooth;
+  }
+  
+  /*--------------------------------------------------------------
+  # General Styling & Shared Classes
+  --------------------------------------------------------------*/
+  body {
+    color: var(--default-color);
+    background-color: var(--background-color);
+    font-family: var(--default-font);
+  }
+  
+  a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  a:hover {
+    color: color-mix(in srgb, var(--accent-color), transparent 25%);
+    text-decoration: none;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--heading-color);
+    font-family: var(--heading-font);
+  }
+
+
+  .back-image {
+    background-image: url("{% static 'img/hero-bg.jpg' %}");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+}
+
+
+.navbar {
+    display: flex; /* Flexbox to align items horizontally */
+    justify-content: space-around; /* Space out navbar items */
+    align-items: center; /* Center items vertically */
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    padding: 1rem; /* Padding around navbar */
+    position: absolute; /* Position the navbar relative to the header */
+    top: 0;
+    width: 100%; /* Make navbar span the entire width */
+}
+
+.subnav .subnav-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.subnav:hover .subnav-content {
+    display: block;
+}
+
+.subnavbtn {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+  
+  
