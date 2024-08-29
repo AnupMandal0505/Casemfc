@@ -3,6 +3,7 @@ from django.template.loader import render_to_string
 from django.shortcuts import render
 from django.conf import settings
 
+from app.models import ContactMessage
 
 
 
@@ -69,10 +70,12 @@ def contact_us(request):
     if request.method == 'POST':
         name=request.POST['name']
         email=request.POST['email']
-        contact=request.POST['contact']
+        phone=request.POST['contact']
         subject=request.POST['subject']
         message=request.POST['message']
-        mail(name,email,contact,subject,message)
+        data=ContactMessage.objects.create(fullname=name,email=email,phone=phone,subject=subject,message=message)
+
+        mail(name,email,phone,subject,message)
         return redirect(reverse("home"))  # Redirect to the URL named 'new_view_name'
     else:
         return render(request,"home/contact_us.html")
