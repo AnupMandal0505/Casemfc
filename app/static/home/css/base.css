@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: rgb(255, 255, 255);
+}
+
+
+ul {
+    list-style-type: none;
+}
+
+
+/* Navbar................................ */
+
+nav{
+    height: 60px;
+    border-bottom: 1px solid black;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bottom shadow */
+}
+
+nav a {
+    font-weight: bold;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    transition: border-bottom 0.3s ease; /* Smooth transition for border-bottom */
+}
+
+nav a:hover {
+    border-bottom: 2px solid red;
+    
+}
+
+
+nav .navbar-nav{
+    padding: 0 50px 0 0;
+    font-size: 1.5rem;
+}
+
+
+
+/* Footer.......................... */
+footer {
+    background-color: #131d33;
+
+}
+
+.footer-bottom {
+    border-top: 1px solid #FFFFFF1A;
+    color: white;
+}
+
+.footer-bottom a {
+    text-decoration: none;
+    color: #0074D9;
+}

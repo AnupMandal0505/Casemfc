@@ -9,106 +9,22 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <link href="{% static 'css/index.css' %}" rel="stylesheet">
+  <link href="{% static 'home/css/index.css' %}" rel="stylesheet">
 
+<!-- Animation............................... -->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <!-- Include Font Awesome -->
 
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+
+  <!-- Carousel -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 
 
-
-  <style>
-    .service {
-      /* Add padding for spacing */
-      background-color: #f8f9fa;
-      /* Light background color */
-    }
-
-    .service h1 {
-      font-size: 2.5rem;
-      color: #343a40;
-      /* Dark color for the text */
-    }
-
-    .service h1 span {
-      color: #007bff;
-      /* Accent color for spans */
-    }
-
-    .service p {
-      font-size: 1.2rem;
-      color: #6c757d;
-      /* Light color for the paragraph text */
-    }
-
-    /* styles.css */
-    .custom-card {
-      width: 80%;
-      height: 80%;
-      position: relative;
-      border-radius: 5px;
-      background-color: #fff;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      margin-bottom: 30px;
-      overflow: hidden;
-    }
-
-    .custom-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      /* Adjust the height as per your requirement */
-      background: linear-gradient(to right, rgb(180, 92, 166) 5%, rgb(255, 255, 255) 6%, rgb(172, 168, 168) 20%);
-    }
-
-
-     .custom-card .icon {
-      padding: 30px;
-    }
-
-    .custom-card .icon img {
-      width: 100px;
-      height: 100px;
-    }
-
-
-    .feature h1 span {
-      color: #007bff;
-      /* Accent color for spans */
-    }
-
-
-    .our-work h1 span {
-      color: #007bff;
-      /* Accent color for spans */
-    }
-
-    /* styles.css */
-.upper-img {
-  top: 20%; /* Adjust the top position */
-  left: -10%; /* Adjust the left position */
-  width: 80%; /* Adjust the width of the overlaying image */
-  height: auto; /* Maintain aspect ratio */
-  
-}
-
-/* Ensure the images are responsive */
-.img-fluid {
-  width: 70%;
-  height: auto;
-  float: right;
-}
-
-  </style>
 </head>
 
 <body>
@@ -116,10 +32,15 @@
 
 
 
-  <div class="header">
-    <nav class="navbar navbar-expand-sm navbar-dark" style="width: 100%;">
+  <header class="header" >
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">CASEMFC</a>
+        <a class="navbar-brand" href="#" id="navbar-brand-text">
+          <span id="navbar-brand-name">{{company.name|upper}}</span>
+          <img src="{% static 'company/logo.png' %}" alt="Logo" id="navbar-logo" width="70" height="70">
+          <!-- Replace with your logo -->
+        </a>
+        <!-- <a class="navbar-brand" href="#">CASEMFC</a> -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -141,231 +62,189 @@
         </div>
       </div>
     </nav>
-
-    <video autoplay loop muted play-inline class="back-video">
+    <video autoplay loop muted play-inline class="back-video desktop-ratio">
       <source src="{% static 'video/desktop1.mp4' %}" type="video/mp4">
     </video>
 
+    <video autoplay loop muted play-inline class="back-video mobile-ratio">
+      <source src="{% static 'video/mobile1.mp4' %}" type="video/mp4">
+    </video>
 
 
-    <p style="color:white; position: absolute; bottom: 0;left: 50%;
+    <p style="color:rgb(253, 253, 253); position: absolute; bottom: 0;left: 50%;
   transform: translateX(-50%);">Scroll Down</p>
+  </header>
+
+
+
+<main class="mt-5"> 
+<!-- Services................................ -->
+<div class="container-fluid service">
+  <div class="row justify-content-center text-center">
+    <div class="col-12 col-md-12">
+      <h1><span>-</span>Service<span>-</span></h1>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
   </div>
 
-
-
-  <main class="mt-4">
-    <div class="container-fluid service">
-      <div class="row justify-content-center text-center">
-        <div class="col-12 col-md-12">
-          <h1 data-aos="flip-left"><span>-</span>Service<span>-</span></h1>
-          <p data-aos="flip-right">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </div>
-      </div>
-
-      <div class="row wrapper ">
-        <div class="col-md-6  d-flex justify-content-center" data-aos="flip-up">
-          <div class="custom-card card">
-            <div class="card-body d-flex justify-content-between">
-              <div class="icon"><img
-                  src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTAzL2stczI5LW5hdC0zMS1qb2IxLWwtam9iMTcyNV8xLnBuZw.png"
-                  class="img-fluid" alt="" srcset=""></div>
-              <div class="content">
-                <h5 class="card-title">Card Title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's
-                  content.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6  d-flex justify-content-center" data-aos="flip-down">
-          <div class="custom-card card">
-            <div class="card-body d-flex justify-content-between">
-              <div class="icon"><i class="fas fa-home" style="color: #000000;font-size: 30px"></i></div>
-              <div class="content">
-                <h5 class="card-title">Card Title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's
-                  content.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6  d-flex justify-content-center" data-aos="flip-up">
-          <div class="custom-card card">
-            <div class="card-body d-flex justify-content-between">
-              <div class="icon"><i class="fas fa-home" style="color: #000000;font-size: 30px"></i></div>
-              <div class="content">
-                <h5 class="card-title">Card Title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's
-                  content.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6  d-flex justify-content-center" data-aos="flip-down">
-          <div class="custom-card card">
-            <div class="card-body d-flex justify-content-between">
-              <div class="icon"><img
-                  src="https://w7.pngwing.com/pngs/506/538/png-transparent-civil-engineering-graphy-civil-engineering-photography-people-public-relations-thumbnail.png"
-                  class="img-fluid" alt="" srcset=""></div>
-              <div class="content">
-                <h5 class="card-title">Card Title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's
-                  content.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6  d-flex justify-content-center" data-aos="flip-up">
-          <div class="custom-card card">
-            <div class="card-body d-flex justify-content-between">
-              <div class="icon"><i class="fas fa-home" style="color: #000000;font-size: 30px"></i></div>
-              <div class="content">
-                <h5 class="card-title">Card Title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's
-                  content.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6  d-flex justify-content-center" data-aos="flip-down">
-          <div class="custom-card card">
-            <div class="card-body d-flex justify-content-between">
-              <div class="icon"><i class="fas fa-home" style="color: #000000;font-size: 30px"></i></div>
-              <div class="content">
-                <h5 class="card-title">Card Title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's
-                  content.</p>
-              </div>
-            </div>
+  <div class="row  ">
+    <div class="col-md-6 col-sm-12  d-flex justify-content-center">
+      <div class="service-wrapper card">
+        <div class="card-body d-flex justify-content-between">
+          <div class="icon"><img
+              src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTAzL2stczI5LW5hdC0zMS1qb2IxLWwtam9iMTcyNV8xLnBuZw.png"
+              class="img-fluid" alt="" srcset=""></div>
+          <div class="content">
+            <h5 class="card-title">Card Title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's
+              content.</p>
           </div>
         </div>
       </div>
     </div>
 
-
-
-
-    <div class="container-fluid feature bg-white mt-5 mb-5">
-      <div class="row justify-content-center text-center">
-        <div class="col-12 col-md-12">
-          <h1 data-aos="flip-up"><span>-</span>Features<span>-</span></h1>
-          <p data-aos="flip-down">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <div class="col-md-6 col-sm-12  d-flex justify-content-center">
+      <div class="service-wrapper card">
+        <div class="card-body d-flex justify-content-between">
+          <div class="icon"><i class="fas fa-home" style="color: #000000;font-size: 30px"></i></div>
+          <div class="content">
+            <h5 class="card-title">Card Title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's
+              content.</p>
+          </div>
         </div>
       </div>
+    </div>
 
-      <div class="row wrapper mt-5">
+    <div class="col-md-6 col-sm-12  d-flex justify-content-center">
+      <div class="service-wrapper card">
+        <div class="card-body d-flex justify-content-between">
+          <div class="icon"><i class="fas fa-home" style="color: #000000;font-size: 30px"></i></div>
+          <div class="content">
+            <h5 class="card-title">Card Title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's
+              content.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-12  d-flex justify-content-center">
+      <div class="service-wrapper card">
+        <div class="card-body d-flex justify-content-between">
+          <div class="icon"><img
+              src="https://w7.pngwing.com/pngs/506/538/png-transparent-civil-engineering-graphy-civil-engineering-photography-people-public-relations-thumbnail.png"
+              class="img-fluid" alt="" srcset=""></div>
+          <div class="content">
+            <h5 class="card-title">Card Title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's
+              content.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-12  d-flex justify-content-center">
+      <div class="service-wrapper card">
+        <div class="card-body d-flex justify-content-between">
+          <div class="icon"><i class="fas fa-home" style="color: #000000;font-size: 30px"></i></div>
+          <div class="content">
+            <h5 class="card-title">Card Title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's
+              content.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-12  d-flex justify-content-center">
+      <div class="service-wrapper card">
+        <div class="card-body d-flex justify-content-between">
+          <div class="icon"><i class="fas fa-home" style="color: #000000;font-size: 30px"></i></div>
+          <div class="content">
+            <h5 class="card-title">Card Title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's
+              content.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!--feature.......................  -->
+  <div class="container-fluid feature bg-white mt-5 mb-5" >
+    <div class="row justify-content-center text-center">
+        <div class="col-12 col-md-12">
+        <h1 data-aos="slide-up"><span>-</span>Features<span>-</span></h1>
+        <p >Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+    </div>
+
+    <div class="row feature-wrapper mt-5 pb-5">
         <div class="col-md-5 d-flex flex-column justify-content-center text-align-center">
-            <h1 data-aos="flip-left">Corporis temporibus maiores provident</h1>
-            <p style="text-align: justify;">
+            <h1 >Corporis temporibus maiores provident</h1>
+            <p data-aos="slide-down" style="text-align: justify;">
                 Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
             </p>
-            <button type="button" class="btn btn-danger w-50 mx-auto" data-aos="flip-left">Danger</button>
+            <button type="button" class="btn btn-danger w-50 mx-auto" >Danger</button>
         </div>
         <div class="col-md-7 position-relative" >
-            <img src="{% static 'img/features-light-2.jpg' %}" alt="" class="img-fluid" data-aos="flip-up">
+            <img src="{% static 'img/features-light-2.jpg' %}" alt="" data-aos="zoom-in-up" class="img-fluid" >
             <div class="upper-img position-absolute">
-                <img src="{% static 'img/features-light-1.jpg' %}" alt="" class="img-thumbnail img-fluid" data-aos="flip-down">
+                <img src="{% static 'img/features-light-1.jpg' %}" data-aos="zoom-in-down" alt="" class="img-thumbnail img-fluid" >
             </div>
         </div>
     </div>
-    
-      
-      </div>
-    </div>
-  </main>
 
 
-  <!-- <div class="container-fluid wrapper">
-    <h1 class="text-center">Our Services</h1>
-
-    <div class="row">
-      <div class="col-md-3 mt-4">
-        <div class="parent">
-          <h5>Agriculture</h5>
-          <p>Efficinet and Intelligent Agriculture Solution</p>
-          <p>Learn More <i class="fas fa-arrow-circle-right icon"></i></p>
-          <div class="child bg-one"></div>
-        </div>
-      </div>
-
-      <div class="col-md-3 mt-4">
-        <div class="parent">
-          <h5>Agriculture</h5>
-          <p>Efficinet and Intelligent Agriculture Solution</p>
-          <p>Learn More <i class="fas fa-arrow-circle-right icon"></i></p>
-          <div class="child bg-one"></div>
-        </div>
-      </div>
-
-      <div class="col-md-3 mt-4">
-        <div class="parent">
-          <h5>Agriculture</h5>
-          <p>Efficinet and Intelligent Agriculture Solution</p>
-          <p>Learn More <i class="fas fa-arrow-circle-right icon"></i></p>
-          <div class="child bg-one"></div>
-        </div>
-      </div>
-
-      <div class="col-md-3 mt-4">
-        <div class="parent">
-          <h5>Agriculture</h5>
-          <p>Efficinet and Intelligent Agriculture Solution</p>
-          <p>Learn More <i class="fas fa-arrow-circle-right icon"></i></p>
-          <div class="child bg-one"></div>
-        </div>
-      </div>
-    </div>
-  </div> -->
+  </div> 
 
 
-
-  <section class="statistics mt-5" style="background-color: #e5e6e7;" data-aos="flip-up">
+  
+<!-- Satisfied Clients.............................. -->
+  <section  class="satisfied-client mt-5" style="background-color: #e5e6e7;" >
     <div class="stat-item">
-      <!-- <i class="fas fa-briefcase" style="color: #000000; font-size: 30px;"></i> -->
       <img src="https://icon-library.com/images/project-icon-png/project-icon-png-16.jpg" class="img-fluid"
         alt="Projects Execution">
-      <h2>1500+</h2>
-      <p>Projects Execution</p>
+      <h2 data-aos="zoom-in-up">1500+</h2>
+      <p >Projects Execution</p>
     </div>
     <div class="stat-item">
-      <!-- <i class="fas fa-briefcase" style="color: #000000; font-size: 30px;"></i> -->
       <img class="img-fluid"
         src="https://p.kindpng.com/picc/s/228-2281356_award-experience-icon-experience-png-transparent-png.png"
         alt="Years of Work Profile">
-      <h2>29+</h2>
+      <h2 data-aos="zoom-in-up">29+</h2>
       <p>Years of Work Profile</p>
     </div>
     <div class="stat-item">
-      <!-- <i class="fas fa-briefcase" style="color: #000000; font-size: 30px;"></i> -->
       <img class="img-fluid" src="https://clipart-library.com/images/8cGbXEaxi.png" alt="Core Team Experience">
-      <h2>200+</h2>
+      <h2 data-aos="zoom-in-up">200+</h2>
       <p>Years of Core Team Experience</p>
     </div>
     <div class="stat-item">
-      <!-- <i class="fas fa-briefcase" style="color: #000000; font-size: 30px;"></i> -->
       <img class="img-fluid"
         src="https://static.vecteezy.com/system/resources/thumbnails/004/578/955/small/testing-the-smartphone-application-and-developing-it-free-vector.jpg"
         alt="Satisfied Clients">
-      <h2>5000+</h2>
+      <h2 data-aos="zoom-in-up">5000+</h2>
       <p>Satisfied Clients</p>
     </div>
   </section>
 
 
-  <div class="container our-work mt-5" data-aos="flip-left">
+
+  <!-- our-work............................... -->
+  <div  class="container our-work mt-5">
     <div class="row justify-content-center text-center">
       <div class="col-12 col-md-12">
-        <h1><span>-</span>Our Recent Work<span>-</span></h1>
-        <p>Explore Our Recent Creations, Demonstrating Our Commitment to Delivering Transformative Digital Solutions.</p>
+        <h1 data-aos="slide-up"><span>-</span>Our Recent Work<span>-</span></h1>
+        <p data-aos="zoom-in-up">Explore Our Recent Creations, Demonstrating Our Commitment to Delivering Transformative Digital Solutions.</p>
       </div>
     </div>
 
@@ -380,7 +259,7 @@
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
               </div>
               <div class="col-md-6">
-                <img class="img-fluid"
+                <img data-aos="zoom-in-up" class="img-fluid"
                   src="https://static.vecteezy.com/system/resources/thumbnails/004/578/955/small/testing-the-smartphone-application-and-developing-it-free-vector.jpg"
                   alt="Satisfied Clients">
               </div>
@@ -397,7 +276,7 @@
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
               </div>
               <div class="col-md-6">
-                <img class="img-fluid"
+                <img data-aos="zoom-in-up" class="img-fluid"
                   src="https://static.vecteezy.com/system/resources/thumbnails/004/578/955/small/testing-the-smartphone-application-and-developing-it-free-vector.jpg"
                   alt="Satisfied Clients">
               </div>
@@ -415,7 +294,7 @@
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
               </div>
               <div class="col-md-6">
-                <img class="img-fluid"
+                <img data-aos="zoom-in-up" class="img-fluid"
                   src="https://static.vecteezy.com/system/resources/thumbnails/004/578/955/small/testing-the-smartphone-application-and-developing-it-free-vector.jpg"
                   alt="Satisfied Clients">
               </div>
@@ -432,7 +311,7 @@
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
               </div>
               <div class="col-md-6">
-                <img class="img-fluid"
+                <img data-aos="zoom-in-up" class="img-fluid"
                   src="https://static.vecteezy.com/system/resources/thumbnails/004/578/955/small/testing-the-smartphone-application-and-developing-it-free-vector.jpg"
                   alt="Satisfied Clients">
               </div>
@@ -449,7 +328,7 @@
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
               </div>
               <div class="col-md-6">
-                <img class="img-fluid"
+                <img data-aos="zoom-in-up" class="img-fluid"
                   src="https://static.vecteezy.com/system/resources/thumbnails/004/578/955/small/testing-the-smartphone-application-and-developing-it-free-vector.jpg"
                   alt="Satisfied Clients">
               </div>
@@ -466,7 +345,7 @@
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
               </div>
               <div class="col-md-6">
-                <img class="img-fluid"
+                <img data-aos="zoom-in-up" class="img-fluid"
                   src="https://static.vecteezy.com/system/resources/thumbnails/004/578/955/small/testing-the-smartphone-application-and-developing-it-free-vector.jpg"
                   alt="Satisfied Clients">
               </div>
@@ -483,7 +362,7 @@
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
               </div>
               <div class="col-md-6">
-                <img class="img-fluid"
+                <img data-aos="zoom-in-up" class="img-fluid"
                   src="https://static.vecteezy.com/system/resources/thumbnails/004/578/955/small/testing-the-smartphone-application-and-developing-it-free-vector.jpg"
                   alt="Satisfied Clients">
               </div>
@@ -501,202 +380,211 @@
 
 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
-
-  <script type="text/javascript">
-    $(function () {
-      // Owl Carousel
-      var owl = $(".owl-carousel");
-      owl.owlCarousel({
-        items: 3,         // Default number of items
-        margin: 10,       // Space between items
-        loop: true,       // Infinite loop
-        nav: true,        // Show navigation arrows
-        responsive: {     // Responsive breakpoints
-          0: {
-            items: 1      // 1 item for screens from 0px and up
-          },
-          600: {
-            items: 2      // 2 items for screens from 600px and up
-          },
-          1000: {
-            items: 3      // 3 items for screens from 1000px and up
-          }
-        }
-      });
-    });
-  </script>
-
-
-
-
-  <section class=" container-fluid heros bg-light mt-5" data-aos="flip-left">
+  <!-- finance-startup................................... -->
+  
+  <section class=" container-fluid finance-startup bg-light mt-5">
     <div class="row">
       <div class="col-md-4 d-flex justify-content-center">
         <div class="image-section">
-          <img class="img-fluid"
+          <img data-aos="zoom-in-down" class="img-fluid"
             src="https://p7.hiclipart.com/preview/131/362/378/park-avenue-property-management-business-human-resources-organization-black-woman-thumbnail.jpg"
             alt="Woman sitting on a stool">
-          <!-- <div class="exercise-details">
-                <p>Exercise details</p>
-                <p>Cost to you</p>
-                <p class="price">$328,249</p>
-                <button class="taxes-btn">Taxes</button>
-                <button class="gains-btn">Gains</button>
-            </div> -->
-          <!-- <div class="ipo-indicator">
-                <p>Approaching an IPO?</p>
-            </div> -->
         </div>
       </div>
-      <div class="col-md-8 d-flex  justify-content-center">
+      <div class="col-md-8 d-flex flex-column align-items-center text-center">
         <div class="content">
-          <h1 data-aos="fade-right">Equity Finance for startup employees</h1>
+          <h1 data-aos="flip-up" >Equity Finance for startup employees</h1>
           <p>Get equity planning, stock option financing, and wealth management from advisors that know how stock
             options
             and equity can help grow your wealth.</p>
-          <button class="get-started-btn" data-aos="fade-left">Get started</button>
+          <button class="get-started-btn" data-aos="zoom-in-up" >Get started</button>
         </div>
       </div>
 
 
     </div>
+  </section>  
 
 
-  </section>
-
+<!-- company-trust Logo................................................... -->
   <section class="company-trust">
-    <p>We work with employees from the best startups</p>
+    <p data-aos="flip-down">We work with employees from the best startups</p>
     <div class="logos">
-      <img src="https://mbluxury1.s3.amazonaws.com/2022/02/25172616/chanel-1.jpg" alt="Snowflake">
-      <img src="https://bcassetcdn.com/public/blog/wp-content/uploads/2021/11/10190851/Louis-Vuitton-1.png"
+      <img data-aos="slide-up" src="https://mbluxury1.s3.amazonaws.com/2022/02/25172616/chanel-1.jpg" alt="Snowflake">
+      <img data-aos="slide-up" src="https://bcassetcdn.com/public/blog/wp-content/uploads/2021/11/10190851/Louis-Vuitton-1.png"
         alt="Reddit">
-      <img
+      <img data-aos="slide-up"
         src="https://e7.pngegg.com/pngimages/499/718/png-clipart-adidas-logo-adidas-logo-k-o-sports-brand-adidas-angle-text.png"
         alt="ThoughtSpot">
-      <img src="https://mbluxury1.s3.amazonaws.com/2022/02/25172711/versace.jpg" alt="Cameo">
-      <img src="https://seekvectors.com/storage/images/7ba2ebebb897b37f57c46ae441b62364.png" alt="FIGURE">
-      <img src="https://www.pngitem.com/pimgs/m/249-2491766_sports-brand-logo-png-transparent-png.png" alt="Aspiration">
-      <img src="https://brandslogos.com/wp-content/uploads/thumbs/audi-logo.png" alt="Databricks">
+      <img data-aos="slide-up" src="https://mbluxury1.s3.amazonaws.com/2022/02/25172711/versace.jpg" alt="Cameo">
+      <img data-aos="slide-up" src="https://seekvectors.com/storage/images/7ba2ebebb897b37f57c46ae441b62364.png" alt="FIGURE">
+      <img data-aos="slide-up" src="https://www.pngitem.com/pimgs/m/249-2491766_sports-brand-logo-png-transparent-png.png" alt="Aspiration">
+      <img data-aos="slide-up" src="https://brandslogos.com/wp-content/uploads/thumbs/audi-logo.png" alt="Databricks">
     </div>
   </section>
 
-  <footer>
+</main>
 
-    <div class="container footer-first">
+
+
+
+<footer>
+
+  <div class="container footer-first">
+    <div class="row">
+      <div class="col-md-3 d-flex flex-column align-items-center text-center">
+        <h4>KNOW YOUR</h4>
+        <img src="{% static 'company/logo.png' %}" alt="Avatar Logo" style="width: 150px;" class="rounded-pill" />
+    </div>
+      <div class="col-md-3 d-flex flex-column align-items-center text-center ">
+        <h4>About US</h4>
+        <ul>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Feedback</li>
+          <li>Screen Reader Access</li>
+          <li>Sitemap</li>
+          <li>Terms & Conditions</li>
+        </ul>
+      </div>
+      <div class="col-md-3 d-flex flex-column align-items-center text-center">
+        <h4>IMPORTANT LINKS</h4>
+        <ul>
+          <li>Ministry of Law</li>
+          <li>Jharkhand</li>
+          <li>SWC</li>
+          <li>Other Websites</li>
+        </ul>
+      </div>
+      <div class="col-md-3 d-flex flex-column align-items-center text-center">
+        <h4>POLICIES</h4>
+        <ul>
+          <li>Website Policies</li>
+          <li>Hyperlinking Policies</li>
+          <li>Privacy Policies</li>
+          <li>Copyright Policies</li>
+          <li>Help</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container footer-middle">
+    <div class="row">
+      <div class="col-md-4 ">
+        <div class="d-flex p-3 align-items-center text-center">
+          <div class="p-1"><i class="fas fa-envelope" ></i></div>
+          <div class="p-1">
+            <h3>Email</h3>
+            <p>{{company.email}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 ">
+        <div class="d-flex p-3 align-items-center text-center">
+          <div class="p-1"> <i class="fas fa-map-marker-alt" ></i></div>
+          <div class="p-1">
+            <h3>Address</h3>
+            <p>{{company.address}},{{company.city}},{{company.state}},{{company.country}},</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 ">
+        <div class="d-flex p-3 align-items-center text-center">
+          <div class="p-1"> <i class="fas fa-phone" ></i></div>
+          <div class="p-1">
+            <h3>Call Us On</h3>
+            <p>Front Desk: {{company.phone_number}}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- < div class="container-fluid footer-bottom pt-4 px-4" > -->
+  <div class="container-fluid footer-bottom pt-4 px-4">
+    <div class="rounded-top p-4">
       <div class="row">
-        <div class="col-md-3">
-          <h4>KNOW YOUR</h4>
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTXvmLn7mps-xlaWIf8U-CIAd8AiQony73Mg&usqp=CAU"
-            alt="Avatar Logo" style=" width: 150px;" class="rounded-pill" />
-          <!-- <img src="" alt="Logo" style="width:200px;" class="rounded-pill" /> -->
+        <div class="col-12 col-sm-6 text-center text-sm-start">Copyright
+          &copy; 2024 <a href="#">{{company.name}}</a>, All Right Reserved.
         </div>
-        <div class="col-md-3">
-          <h4>About US</h4>
-          <ul>
-            <li>About Us</li>
-            <li>Contact Us</li>
-            <li>Feedback</li>
-            <li>Screen Reader Access</li>
-            <li>Sitemap</li>
-            <li>Terms & Conditions</li>
-          </ul>
-        </div>
-        <div class="col-md-3">
-          <h4>IMPORTANT LINKS</h4>
-          <ul>
-            <li>Ministry of Law</li>
-            <li>Jharkhand</li>
-            <li>SWC</li>
-            <li>Other Websites</li>
-          </ul>
-        </div>
-        <div class="col-md-3">
-          <h4>POLICIES</h4>
-          <ul>
-            <li>Website Policies</li>
-            <li>Hyperlinking Policies</li>
-            <li>Privacy Policies</li>
-            <li>Copyright Policies</li>
-            <li>Help</li>
-          </ul>
+        <div class="col-12 col-sm-6 text-center text-sm-end">
+          Designed By <a href="">Anurag Kumar</a>
+          <br />Distributed By: <a href="" target="_blank">Anurag</a>
         </div>
       </div>
     </div>
-
-    <div class="container footer-middle">
-      <div class="row">
-        <div class="col-md-4 ">
-          <div class="d-flex p-3 text-white">
-            <div class="p-1"><i class="fas fa-home" style="color: #0074D9;font-size: 30px"></i></div>
-            <div class="p-1">
-              <h3>Email</h3>
-              <p>anurag@gmail.com</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 ">
-          <div class="d-flex p-3 text-white">
-            <div class="p-1"> <i class="fas fa-home" style="color: #0074D9;font-size: 30px"></i></div>
-            <div class="p-1">
-              <h3>Address</h3>
-              <p>Near Big Bazar, Dhanbad</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 ">
-          <div class="d-flex p-3 text-white">
-            <div class="p-1"> <i class="fas fa-home" style="color: #0074D9;font-size: 30px"></i></div>
-            <div class="p-1">
-              <h3>Call Us On</h3>
-              <p>Front Desk:7481009993</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
+  </div>
+</footer>
 
 
-    <!-- < div class="container-fluid footer-bottom pt-4 px-4" > -->
-    <div class="container-fluid footer-bottom pt-4 px-4">
-      <div class="rounded-top p-4">
-        <div class="row">
-          <div class="col-12 col-sm-6 text-center text-sm-start">Copyright
-            &copy; 2024 <a href="#">Casemfc</a>, All Right Reserved.
-          </div>
-          <div class="col-12 col-sm-6 text-center text-sm-end">
-            Designed By <a href="">Anurag Kumar</a>
-            <br />Distributed By: <a href="" target="_blank">Anurag</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-
-
-
-
-
-
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      offset: 200
-    });
-  </script>
-
-
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
-    <i class="fas fa-arrow-up"></i>
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+  <i class="fas fa-arrow-up"></i>
 </a>
- <!-- Custom JavaScript -->
- <script>
+
+
+
+<!--Navbar scrool time  -->
+<script>
+  window.addEventListener('scroll', function() {
+      var navbar = document.querySelector('.navbar');
+
+      if (window.scrollY > 50) { // Adjust the scroll distance as needed
+          navbar.classList.add('scrolled');
+      } else {
+          navbar.classList.remove('scrolled');
+      }
+  });
+</script>
+
+<!-- Carousel................................................... -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+
+<script type="text/javascript">
+  $(function () {
+    // Owl Carousel
+    var owl = $(".owl-carousel");
+    owl.owlCarousel({
+      items: 3,         // Default number of items
+      margin: 10,       // Space between items
+      loop: true,       // Infinite loop
+      nav: true,        // Show navigation arrows
+      responsive: {     // Responsive breakpoints
+        0: {
+          items: 1      // 1 item for screens from 0px and up
+        },
+        600: {
+          items: 2      // 2 items for screens from 600px and up
+        },
+        1000: {
+          items: 3      // 3 items for screens from 1000px and up
+        }
+      }
+    });
+  });
+</script>
+
+
+<!-- Animation....................... -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    offset: 200
+  });
+</script>
+
+
+
+<!-- scroll-top............................. -->
+<script>
   // script.js
   document.addEventListener("scroll", function () {
       const scrollTopButton = document.getElementById("scroll-top");
@@ -712,6 +600,7 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
   });
 </script>
+
 </body>
 
 </html>

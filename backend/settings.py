@@ -105,6 +105,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# settings.py
+
+PASSWORD_RESET_TIMEOUT_DAYS = 3  # or any number of days you prefer
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
