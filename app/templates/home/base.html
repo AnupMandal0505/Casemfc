@@ -23,39 +23,78 @@
 
     {% block head %}{% endblock head %}
 
-    
-    {% block style %}{% endblock style %}
+<style>
+  :root {
+    --default-font: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --heading-font: "Montserrat", sans-serif;
+    --nav-font: "Poppins", sans-serif;
+  }
+  
+  :root {
+    --default-color: #32353a;
+    --heading-color: #000000;
+    --paragraph-color: #212529;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--nav-font);
+    color: var(--heading-color);
+  }
+  
+  p {
+    font-family: var(--default-font);
+    color: var(--paragraph-color);
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+
+  {% block style %}{% endblock style %}
+
+</style>
  
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm bg-light sticky-top">
+
+    <nav class="navbar navbar-expand-sm  navbar-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">CASEMFC</a>
+            <a class="navbar-brand" href="/" id="navbar-brand-text">
+                <span id="navbar-brand-name">CASEMFC</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <!-- Centered links -->
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="home">Home</a>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link" id="services" href="service">Services</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Service
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link" href="project">Project</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contentcontact_us">Contact</a>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link" href="about">About Us</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link" href="contact_us">Contact Us</a>
                     </li>
+                </ul>
+                <!-- Right-aligned Admin link -->
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="signin">Admin</a>
                     </li>
@@ -68,13 +107,31 @@
       <main>
         {% block body %}{% endblock body %}
     
+
+        <!-- company-trust Logo................................................... -->
+  <section class="company-trust">
+    <p data-aos="flip-down">We work with employees from the best startups</p>
+    <div class="logos">
+      <img data-aos="slide-up" src="https://mbluxury1.s3.amazonaws.com/2022/02/25172616/chanel-1.jpg" alt="Snowflake">
+      <img data-aos="slide-up" src="https://bcassetcdn.com/public/blog/wp-content/uploads/2021/11/10190851/Louis-Vuitton-1.png"
+        alt="Reddit">
+      <img data-aos="slide-up"
+        src="https://e7.pngegg.com/pngimages/499/718/png-clipart-adidas-logo-adidas-logo-k-o-sports-brand-adidas-angle-text.png"
+        alt="ThoughtSpot">
+      <img data-aos="slide-up" src="https://mbluxury1.s3.amazonaws.com/2022/02/25172711/versace.jpg" alt="Cameo">
+      <img data-aos="slide-up" src="https://seekvectors.com/storage/images/7ba2ebebb897b37f57c46ae441b62364.png" alt="FIGURE">
+      <img data-aos="slide-up" src="https://www.pngitem.com/pimgs/m/249-2491766_sports-brand-logo-png-transparent-png.png" alt="Aspiration">
+      <img data-aos="slide-up" src="https://brandslogos.com/wp-content/uploads/thumbs/audi-logo.png" alt="Databricks">
+    </div>
+  </section>
+
       </main>
 
    
     <footer>
         <!-- < div class="container-fluid footer-bottom pt-4 px-4" > -->
-        <div class="container-fluid footer-bottom pt-4 px-4">
-            <div class="rounded-top p-4">
+        <div class="container-fluid footer-bottom pt-2 px-4">
+            <div class="rounded-top p-1">
                 <div class="row">
                     <div class="col-12 col-sm-6 text-center text-sm-start">Copyright
                         &copy; 2024 <a href="#">Casemfc</a>, All Right Reserved.
@@ -88,7 +145,34 @@
         </div>
     </footer>
 
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+        <i class="fas fa-arrow-up"></i>
+      </a>
 
+      
+<!-- scroll-top............................. -->
+<script>
+    // script.js
+    document.addEventListener("scroll", function () {
+        const scrollTopButton = document.getElementById("scroll-top");
+        if (window.scrollY > 300) { // Adjust this value based on when you want the button to appear
+            scrollTopButton.classList.add("show");
+        } else {
+            scrollTopButton.classList.remove("show");
+        }
+    });
+  
+    document.getElementById("scroll-top").addEventListener("click", function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+
+
+
+
+
+  <!-- Animation -->
     
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>

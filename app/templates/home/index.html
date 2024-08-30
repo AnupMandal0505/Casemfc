@@ -47,10 +47,13 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link " id="services" href="#">Services</a>
+              <a class="nav-link " id="services" href="service">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About Us</a>
+              <a class="nav-link" href="project">Project</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about">About Us</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contact_us">Contact Us</a>
@@ -63,11 +66,11 @@
       </div>
     </nav>
     <video autoplay loop muted play-inline class="back-video desktop-ratio">
-      <source src="{% static 'video/desktop1.mp4' %}" type="video/mp4">
+      <source src="{% static 'home/video/desktop1.mp4' %}" type="video/mp4">
     </video>
 
     <video autoplay loop muted play-inline class="back-video mobile-ratio">
-      <source src="{% static 'video/mobile1.mp4' %}" type="video/mp4">
+      <source src="{% static 'home/video/mobile1.mp4' %}" type="video/mp4">
     </video>
 
 
@@ -196,9 +199,9 @@
             <button type="button" class="btn btn-danger w-50 mx-auto" >Danger</button>
         </div>
         <div class="col-md-7 position-relative" >
-            <img src="{% static 'img/features-light-2.jpg' %}" alt="" data-aos="zoom-in-up" class="img-fluid" >
+            <img src="{% static 'home/img/features-light-2.jpg' %}" alt="" data-aos="zoom-in-up" class="img-fluid" >
             <div class="upper-img position-absolute">
-                <img src="{% static 'img/features-light-1.jpg' %}" data-aos="zoom-in-down" alt="" class="img-thumbnail img-fluid" >
+                <img src="{% static 'home/img/features-light-1.jpg' %}" data-aos="zoom-in-down" alt="" class="img-thumbnail img-fluid" >
             </div>
         </div>
     </div>

@@ -408,10 +408,27 @@
         margin-left: 10%;
     }
 }
-  
-</style>
+/* Adjust text size for mobile devices */
+@media (max-width: 768px) {
+    #example th,
+    #example td {
+        font-size: 12px; /* Smaller text for mobile */
+    }
+}
+
+/* For even smaller devices like mobile phones */
+@media (max-width: 480px) {
+    #example th,
+    #example td {
+        font-size: 7px; /* Further reduce text size */
+    }
+}
+
+
 {% block style %}
 {% endblock style %}
+</style>
+
 <body>
 
     {% comment %} <div class="form-popup" {% if 1 == request.user.status  %} style="display:none;"{% endif %}>
@@ -452,7 +469,7 @@
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
-                        {% if request.user.profile %}<img class="rounded-circle me-lg-2" src="{{request.user.profile}}" alt="" style="width: 40px; height: 40px;"> {% else %}<img class="rounded-circle me-lg-2" src="{% static 'img/blog-1.jpg' %}" alt="" style="width: 40px; height: 40px;">{% endif %}
+                        {% if request.user.profile %}<img class="rounded-circle me-lg-2" src="{{request.user.profile}}" alt="" style="width: 40px; height: 40px;"> {% else %}<img class="rounded-circle me-lg-2" src="{% static 'home/img/blog-1.jpg' %}" alt="" style="width: 40px; height: 40px;">{% endif %}
 
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
@@ -473,6 +490,22 @@
                     </div>
                     <a href="message" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Message</a>
                     <a href="history" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>History</a>
+                    <div class="nav-item dropdown">
+                        <a href="update_profile" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Services</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="service_create" class="dropdown-item">Upload Services</a>
+                            <a href="service_list" class="dropdown-item">History</a>
+                        </div>
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="update_profile" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Project</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="project_create" class="dropdown-item">Upload Project</a>
+                            <a href="project_list" class="dropdown-item">History</a>
+                        </div>
+                    </div>
+                    
                     <a href="/signout" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Logout</a>
 
 
@@ -500,7 +533,7 @@
                     {% comment %} Account {% endcomment %}
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            {% if request.user.profile %}<img class="rounded-circle me-lg-2" src="{{request.user.profile}}" alt="" style="width: 40px; height: 40px;"> {% else %} <img class="rounded-circle me-lg-2" src="{% static 'img/blog-1.jpg' %}" alt="" style="width: 40px; height: 40px;">{% endif %}
+                            {% if request.user.profile %}<img class="rounded-circle me-lg-2" src="{{request.user.profile}}" alt="" style="width: 40px; height: 40px;"> {% else %} <img class="rounded-circle me-lg-2" src="{% static 'home/img/blog-1.jpg' %}" alt="" style="width: 40px; height: 40px;">{% endif %}
 
                             {% comment %} <img class="rounded-circle me-lg-2" src="{{request.user.profile.url}}" alt="" style="width: 40px; height: 40px;"> {% endcomment %}
                             <span class="d-none d-lg-inline-flex">{{request.user}}</span>

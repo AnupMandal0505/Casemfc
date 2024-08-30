@@ -1,0 +1,139 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block title %}Service{% endblock title %}
+
+
+{% block style %}
+.service-page {
+    margin-top: 60px;
+    /* Set background image */
+    background-image: url(https://cdn.pixabay.com/photo/2016/10/21/14/50/plouzane-1758197_1280.jpg);
+    background-size: cover; /* Cover the entire element */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image from repeating */
+    
+    width: 100%; /* Full width of the container */
+    height: 300px; /* Adjust as needed */
+    opacity: 0.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-page ul {
+    list-style: none; /* Remove default bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    display: flex; /* Display list items in a row */
+    flex-wrap: wrap; /* Allow items to wrap if needed */
+}
+
+.service-page ul li {
+    margin: 0 10px; /* Space between items */
+    position: relative; /* Position relative for the pseudo-element */
+}
+
+.service-page ul li:not(:last-child)::after {
+    content: '/'; /* Slash separator */
+    position: absolute; /* Position the separator */
+    right: -15px; /* Adjust this value to position the separator */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for centering */
+    color: #000; /* Color of the separator */
+}
+
+.service-page {    
+    font-size: clamp(8px, 2vw, 16px);
+}
+
+.service-page h4{    
+    font-size: clamp(8px, 2vw, 16px);
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+
+.wrappper .wrap2 .card{
+    padding: 40px 10px 25px 40px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;}
+
+
+.wrappper .wrap2 h3{
+    font-weight:bold;
+}
+
+
+
+{% endblock style %}
+
+
+
+{% block body %}
+<div class="container service-page">
+    <div class="row justify-content-center align-items-center text-center">
+        <div class="col-12">
+            <h4>Responsive Web Design</h4>
+        </div>
+        <div class="col-12">
+            <ul class="breadcrumb-list d-inline-flex list-unstyled p-0 mb-0">
+                <li><a class="breadcrumb-link" href="#">Home</a></li>
+                <li><a class="breadcrumb-link" href="#">Services</a></li>
+                <li><a class="breadcrumb-link" href="#">Website Design Services</a></li>
+                <li><a class="breadcrumb-link" href="#">Responsive Web Design</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="container wrappper mt-5">
+    <div class="row wrap1 text-center">
+        <h1 data-aos="slide-down">A flawlessly working website. You need it. Everyone needs it.        </h1>
+        <p data-aos="slide-up"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore ullam asperiores dignissimos. Laborum tempore architecto blanditiis eaque iste sint. Expedita, ratione. Sint quae accusantium reiciendis quis iste quos. Velit, deserunt!</p>
+    </div>
+
+    <div class="row wrap2">
+        <div class="col-md-6 mt-3">
+            <img  data-aos="zoom-in-down"  src="https://media.istockphoto.com/id/1254993875/photo/cropped-image-of-business-woman-hand-working-laptop-computer-in-home-office.jpg?s=2048x2048&w=is&k=20&c=Ex-DQBwF9SuEBAA3pWcs4tKqJGPPCv2KY8Uq19lFCqU=" class="img-fluid" alt="" srcset="">
+        </div>
+
+        <div class="col-md-6 mt-3">
+            <div class="card">
+                <h3 data-aos="slide-up">Responsive Web Design Services by CASEMFC: Embrace the Mobile Revolution</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure, aliquid voluptas quae, inventore quia et accusantium harum molestias fugit quaerat totam doloribus? Ex iste ducimus labore maiores amet, modi id dolores libero ea consequatur, dolorem quod explicabo delectus rem officia. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati fuga similique veniam ratione tempore reprehenderit dolorem nihil eum quas nemo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex optio temporibus earum! Recusandae quaerat ratione voluptate. Dignissimos iure veritatis voluptates ullam dicta non tempora fuga nostrum accusamus deleniti modi esse animi enim, veniam repellendus assumenda adipisci. Natus, excepturi ullam? Eius nihil inventore quam beatae quis voluptas, voluptates molestias esse corporis.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row wrap2">
+        <div class="col-md-6 mt-3 order-md-1 order-2">
+            <div class="card">
+                <h3 data-aos="slide-up">Responsive Web Design Services by CASEMFC: Embrace the Mobile Revolution</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure, aliquid voluptas quae, inventore quia et accusantium harum molestias fugit quaerat totam doloribus? Ex iste ducimus labore maiores amet, modi id dolores libero ea consequatur, dolorem quod explicabo delectus rem officia. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati fuga similique veniam ratione tempore reprehenderit dolorem nihil eum quas nemo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex optio temporibus earum! Recusandae quaerat ratione voluptate. Dignissimos iure veritatis voluptates ullam dicta non tempora fuga nostrum accusamus deleniti modi esse animi enim, veniam repellendus assumenda adipisci. Natus, excepturi ullam? Eius nihil inventore quam beatae quis voluptas, voluptates molestias esse corporis.</p>
+            </div>
+        </div>
+        <div class="col-md-6 mt-3 order-md-2 order-1">
+            <img data-aos="zoom-in-up"  src="https://media.istockphoto.com/id/1254993875/photo/cropped-image-of-business-woman-hand-working-laptop-computer-in-home-office.jpg?s=2048x2048&w=is&k=20&c=Ex-DQBwF9SuEBAA3pWcs4tKqJGPPCv2KY8Uq19lFCqU=" class="img-fluid" alt="" srcset="">
+        </div>
+    </div>
+</div>
+
+
+<div class="container Touch-us mt-5">
+    <div class="row wrap1 text-center">
+        <h1 >Get in Touch with Us</h1>
+        <p > Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore ullam asperiores dignissimos. Laborum tempore architecto blanditiis eaque iste sint. Expedita, ratione. Sint quae accusantium reiciendis quis iste quos. Velit, deserunt!</p>
+    </div>
+
+</div>
+{% endblock body %}

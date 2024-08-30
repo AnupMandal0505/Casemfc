@@ -1,7 +1,7 @@
 # your_app/admin.py
 
 from django.contrib import admin
-from .models import ContactMessage,Company
+from .models import ContactMessage,Company,Service,Project
 
 
 @admin.register(ContactMessage)
@@ -20,3 +20,19 @@ class CompanyAdmin(admin.ModelAdmin):
     )
     search_fields = ('name', 'address', 'city', 'state', 'country', 'email', 'mission', 'vision')
     list_filter = ('is_active', 'founded_date')
+
+
+
+@admin.register(Service)
+class ServiceAdmin(admin.ModelAdmin):
+    list_display = ('name', 'created_at', 'updated_at')
+    search_fields = ('name',)
+    list_filter = ('created_at',)
+
+
+
+@admin.register(Project)
+class ProjectAdmin(admin.ModelAdmin):
+    list_display = ('name', 'start_date', 'end_date', 'client', 'created_at')
+    search_fields = ('name', 'client')
+    list_filter = ('start_date', 'end_date')

@@ -4,33 +4,28 @@
 {% block body %}
 <div class="container">
 
-<h2>History</h2>
+<h2>Our Project</h2>
 <div class="table-responsive">
 
 <table id="example" class=".table-hover table table-dark table-striped pt-3 mb-3">
     <thead>
         <tr>
             <th></th>
-            <th>Full Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Subject</th>
-            <th>Message</th>
-            <th>Date</th>
-            <th>Status</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Created_at</th>
+            <th>Updated_at</th>
         </tr>
     </thead>
     <tbody>
-        {% for i in data %}
+        {% for i in service %}
         <tr>
             <td><i class="fas fa-file"></i></td>
-            <td>{{ i.fullname }}</td>
-            <td>{{ i.email }}</td>
-            <td>{{ i.phone }}</td>
-            <td>{{ i.subject }}</td>
-            <td>{{ i.message }}</td>
-            <td>{{ i.datetime }}</td>
-            <td>{{ i.status }}</td>
+            <td>{{ i.name }}</td>
+            <td>{{ i.description }}</td>
+            <td>{{ i.created_at }}</td>
+            <td>{{ i.updated_at }}</td>
+            
         </tr>
         {% endfor %}
     </tbody>

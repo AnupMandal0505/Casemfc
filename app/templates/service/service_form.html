@@ -1,0 +1,51 @@
+{% extends "dashboard/base.html" %}
+{% block style %}
+/* Responsive form styles */
+.project-form form {
+  max-width: 600px;
+  margin: auto;
+}
+
+.project-form h2 {
+  margin-bottom: 20px;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+.project-form .form-label {
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+}
+
+.project-form .form-control,
+.project-form .form-select {
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+}
+
+.project-form button {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+{% endblock style %}
+
+{% block body %}
+
+<div class="container project-form mt-5">
+    <h2 class="text-center">Add New Project</h2>
+    <form action="service_create" method="post">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="projectName" class="form-label">Project Name</label>
+        <input type="text" class="form-control" name="name" id="projectName" placeholder="Enter project name" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea class="form-control" name="description" id="description" rows="4" placeholder="Enter project description" required></textarea>
+      </div>
+  
+  
+  
+      <button type="submit" class="btn btn-primary w-100">Submit</button>
+    </form>
+  </div>
+  
+{% endblock body %}
