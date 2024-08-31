@@ -28,9 +28,12 @@ def mail(name,email,contact,subject,message):
         # Create an email message object and attach the HTML message
         msg = EmailMultiAlternatives(subject, '', from_email, [to])
         msg.attach_alternative(message, 'text/html')
-        msg.send()
-
-        clientmail(name,email)
+        try:
+            msg.send()
+            clientmail(name,email)
+        except Exception as e:
+            print("Error sending email:", e)
+            raise Exception("Problem sending email check password")
         
     except Exception as e:
         print("Error sending email:", e)
@@ -55,7 +58,13 @@ def clientmail(name,email):
         # Create an email message object and attach the HTML message
         msg = EmailMultiAlternatives(subject, '', from_email, [to])
         msg.attach_alternative(message, 'text/html')
-        msg.send()
+
+
+        try:
+            msg.send()
+        except Exception as e:
+            print("Error sending email:", e)
+            raise Exception("Problem sending email check password")
 
         
         
@@ -76,6 +85,7 @@ def contact_us(request):
         data=ContactMessage.objects.create(fullname=name,email=email,phone=phone,subject=subject,message=message)
 
         mail(name,email,phone,subject,message)
+
         return redirect(reverse("home"))  # Redirect to the URL named 'new_view_name'
     else:
         return render(request,"home/contact_us.html")
