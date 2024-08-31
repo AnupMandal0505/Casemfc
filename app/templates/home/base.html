@@ -95,7 +95,7 @@
    
     {% for message in messages %}
         
-      <div id="alert" class="alert mt-5 position-fixed top-20 start-50 translate-middle-x w-100 text-center {% if message.tags == "success" %} alert-success {% elif message.tags == "warning" %} alert-danger{% else %} alert-info{% endif %} alert-dismissible fade show" id="alert">
+      <div id="alert" class="alert {% if message.tags == "success" %} alert-success {% elif message.tags == "warning" %} alert-danger{% else %} alert-info{% endif %} alert-dismissible fade show" id="alert">
         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
         <strong>{{ message }}</strong>  </div>
 
