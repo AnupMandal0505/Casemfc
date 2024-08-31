@@ -63,6 +63,29 @@
 
   {% block style %}{% endblock style %}
 
+
+  @media (max-width: 576px) {
+    .navbar-collapse {
+        background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+        backdrop-filter: blur(10px); /* Blur effect */
+        -webkit-backdrop-filter: blur(10px); /* Support for Safari */
+        border-radius: 10px; /* Optional: round corners for a more glassy look */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        text-align: center;
+        padding: 5px;
+        margin-top: 20px;
+    }
+  
+    .navbar-nav .nav-item .nav-link {
+        color: #fff; /* Text color for links in mobile view */
+    }
+  
+    .navbar-nav .nav-item .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent hover effect */
+        color: black;
+        transition: 0.3s ease;
+    }
+  }
 </style>
  
 </head>

@@ -165,23 +165,23 @@
                 {% csrf_token %}
                 <div class="mb-3 mt-3">
                     <label for="name">Full Name:</label>
-                    <input type="text" class="form-control" placeholder="Enter Name" name="name">
+                    <input type="text" class="form-control" placeholder="Enter Name" name="name" required>
                 </div>
                 <div class="mb-3">
                     <label for="email">Email:</label>
-                    <input type="email" class="form-control" placeholder="Enter Email" name="email">
+                    <input type="email" class="form-control" placeholder="Enter Email" name="email" required>
                 </div>
                 <div class="mb-3">
                     <label for="Phone">Phone:</label>
-                    <input type="number" class="form-control" placeholder="Enter Phone" name="contact">
+                    <input type="number" class="form-control" placeholder="Enter Phone" name="contact" required>
                 </div>
                 <div class="mb-3">
                     <label for="Subject">Subject:</label>
-                    <textarea class="form-control" rows="1" name="subject"></textarea>
+                    <textarea class="form-control" rows="1" name="subject" required></textarea>
                 </div>
                 <div class="mb-3">
                     <label for="comment">Message:</label>
-                    <textarea class="form-control" rows="5" name="message"></textarea>
+                    <textarea class="form-control" rows="5" name="message" required></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -190,3 +190,15 @@
     </div>
 </div>
 {% endblock body %}
+
+
+{% block js %}
+<script>
+    // JavaScript to handle page reload on back navigation
+    window.addEventListener('pageshow', function(event) {
+        if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
+            window.location.reload();
+        }
+    });
+</script>
+{% endblock js %}
