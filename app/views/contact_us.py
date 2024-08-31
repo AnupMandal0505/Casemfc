@@ -2,7 +2,10 @@ from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.shortcuts import render
 from django.conf import settings
+from django.contrib import messages
 
+from django.shortcuts import redirect
+from django.urls import reverse
 from app.models import ContactMessage
 
 
@@ -73,8 +76,6 @@ def clientmail(name,email):
         raise Exception("Problem sending email")
 
 
-from django.shortcuts import redirect
-from django.urls import reverse
 def contact_us(request):
     if request.method == 'POST':
         name=request.POST['name']
@@ -82,10 +83,23 @@ def contact_us(request):
         phone=request.POST['contact']
         subject=request.POST['subject']
         message=request.POST['message']
-        data=ContactMessage.objects.create(fullname=name,email=email,phone=phone,subject=subject,message=message)
+        
+        if not (name and email and phone and subject and message):
+            messages.error(request, "All fields are required.")
+            return render(request, "home/contact_us.html")
 
-        mail(name,email,phone,subject,message)
+        try:
+            # Save the contact message to the database
+            ContactMessage.objects.create(fullname=name, email=email, phone=phone, subject=subject, message=message)
 
-        return redirect(reverse("home"))  # Redirect to the URL named 'new_view_name'
+            # Send emails
+            mail(name, email, phone, subject, message)
+
+            messages.success(request, "Your message has been sent successfully.")
+            return redirect(contact_us)  # Redirect to the home page
+        except Exception as e:
+            # Handle any errors that occur during email sending
+            messages.error(request, "There was a problem sending your message. Please try again later.")
+            return render(request, "home/contact_us.html")
     else:
-        return render(request,"home/contact_us.html")
+        return render(request, "home/contact_us.html")
