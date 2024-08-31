@@ -11,8 +11,7 @@ def signin(request):
     if request.method == 'POST':
         email=request.POST['email']
         password=request.POST['password']
-        print(email)
-        print(password)
+        
         try:
             users=User.objects.get(username=email)  
             
@@ -24,7 +23,8 @@ def signin(request):
                 messages.info(request, 'Check Password !')
                 return redirect('signin')
         except:
-            return redirect('home')
+            messages.info(request, 'User Not Found !')
+            return redirect(signin)
     else:
         return render(request,'auth/signin.html')
 
